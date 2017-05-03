@@ -17,15 +17,15 @@ class PersonActor(val person: Person) : UntypedActor() {
 
     private fun writeWedding(message: Wedding) {
         when (person.gender) {
-            Gender.FEMALE -> println("${person.name} says: all the best ${message.person.name}, wish you a wonderful life")
-            Gender.MALE -> println("${person.name} says: oops ${message.person.name} has a birthday, one more step to the grave")
+            Gender.FEMALE -> println("${person.name} says: all the best ${message.personName}, wish you a wonderful life")
+            Gender.MALE -> println("${person.name} says: oops ${message.personName} has a birthday, one more step to the grave")
         }
     }
 
     private fun writeBirthday(message: Birthday) {
         when (person.gender) {
-            Gender.FEMALE -> println("${person.name} says: yaaay, ${message.person.name} is so lucky to be married now")
-            Gender.MALE -> println("${person.name} says: poor ${message.person.name}, the freedom is gone")
+            Gender.FEMALE -> println("${person.name} says: yaaay, ${message.personName} is so lucky to be married now")
+            Gender.MALE -> println("${person.name} says: poor ${message.personName}, the freedom is gone")
         }
     }
 }
