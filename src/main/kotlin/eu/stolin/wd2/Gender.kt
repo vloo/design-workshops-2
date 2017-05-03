@@ -6,8 +6,7 @@ enum class Gender(val value: String) {
 
     companion object {
         fun fromString(value: String): Gender {
-            return values().single { it.value == value  }
+            return values().single { it.value == value }
         }
     }
-
 }
