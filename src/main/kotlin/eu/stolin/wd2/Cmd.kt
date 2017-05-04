@@ -52,5 +52,9 @@ fun main(args: Array<String>) {
             }
         }
 
-    } while (commandInput.toUpperCase() != "DONE")
+    } while (command.type != CommandType.DONE)
+
+    system.terminate()
+    system.awaitTermination()
+
 }

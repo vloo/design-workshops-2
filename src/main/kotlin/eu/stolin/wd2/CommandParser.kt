@@ -20,6 +20,8 @@ object CommandParser {
             } else {
                 return Command(CommandType.UNKNOWN, "")
             }
+        } else if (line.toUpperCase() == "DONE") {
+            return Command(CommandType.DONE, "")
         } else {
             return Command(CommandType.UNKNOWN, "")
         }
