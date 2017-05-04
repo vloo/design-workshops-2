@@ -3,10 +3,7 @@ package eu.stolin.wd2
 import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import akka.actor.Props
-import eu.stolin.wd2.actor.PersonActor
-import eu.stolin.wd2.actor.Register
-import eu.stolin.wd2.actor.Wedding
-import eu.stolin.wd2.actor.WeddingRegistrationActor
+import eu.stolin.wd2.actor.*
 
 fun main(args: Array<String>) {
 
@@ -24,6 +21,8 @@ fun main(args: Array<String>) {
 
     val weddingRegistrationActorRef = system.actorOf(Props.create(WeddingRegistrationActor::class.java))
 
+    val birthdayRegistrationActorRef = system.actorOf(Props.create(BirthdayRegistrationActor::class.java))
+
 
     do {
         println("Enter commands:")
@@ -33,11 +32,23 @@ fun main(args: Array<String>) {
             CommandType.WEDDING_INTEREST_REGISTRATION -> {
                 val actorRef = personsMap[command.personName]
                 if (actorRef != null) {
-                    weddingRegistrationActorRef.tell(Register(actorRef), weddingRegistrationActorRef)
+                    weddingRegistrationActorRef.tell(Register(actorRef, command.personName), weddingRegistrationActorRef)
                 }
             }
             CommandType.WEDDING_EVENT -> {
                 weddingRegistrationActorRef.tell(Wedding(command.personName), weddingRegistrationActorRef)
+            }
+            CommandType.BIRTHDAY_INTEREST_REGISTRATION -> {
+                val actorRef = personsMap[command.personName]
+                if (actorRef != null) {
+                    birthdayRegistrationActorRef.tell(Register(actorRef, command.personName), birthdayRegistrationActorRef)
+                }
+            }
+            CommandType.BIRTHDAY_EVENT -> {
+                birthdayRegistrationActorRef.tell(Birthday(command.personName), birthdayRegistrationActorRef)
+            }
+            CommandType.UNKNOWN -> {
+                println("Unknown command")
             }
         }
 

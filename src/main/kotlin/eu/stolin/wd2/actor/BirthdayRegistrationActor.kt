@@ -4,7 +4,7 @@ import akka.actor.ActorRef
 import akka.actor.UntypedActor
 
 
-class WeddingRegistrationActor : UntypedActor() {
+class BirthdayRegistrationActor : UntypedActor() {
 
     var personsToNotify = mutableSetOf<ActorRef>()
 
@@ -12,12 +12,12 @@ class WeddingRegistrationActor : UntypedActor() {
         when (message) {
             is Register -> {
                 personsToNotify.add(message.ref)
-                println("${message.personName} is interested in weddings")
+                println("${message.personName} is interested in birthdays")
             }
-            is Wedding -> personsToNotify.forEach { it.tell(message, self) }
+            is Birthday -> personsToNotify.forEach { it.tell(message, self) }
             is Deregister -> {
                 personsToNotify.remove(message.ref)
-                println("${message.personName} is't interested in weddings")
+                println("${message.personName} is't interested in birthdays")
             }
         }
     }
