@@ -2,6 +2,9 @@ package eu.stolin.wd2.actor
 
 import akka.actor.ActorRef
 import akka.actor.UntypedActor
+import eu.stolin.wd2.messages.Birthday
+import eu.stolin.wd2.messages.Deregister
+import eu.stolin.wd2.messages.Register
 
 
 class BirthdayRegistrationActor : UntypedActor() {

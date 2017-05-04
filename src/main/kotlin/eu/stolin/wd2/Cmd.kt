@@ -4,6 +4,8 @@ import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import akka.actor.Props
 import eu.stolin.wd2.actor.*
+import eu.stolin.wd2.messages.Line
+import eu.stolin.wd2.parser.PersonParser
 
 fun main(args: Array<String>) {
 

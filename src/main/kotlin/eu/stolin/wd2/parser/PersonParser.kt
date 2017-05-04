@@ -1,4 +1,7 @@
-package eu.stolin.wd2
+package eu.stolin.wd2.parser
+
+import eu.stolin.wd2.parser.Gender
+import eu.stolin.wd2.parser.Person
 
 object PersonParser {
 

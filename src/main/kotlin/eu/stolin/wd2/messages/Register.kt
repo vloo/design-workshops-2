@@ -1,4 +1,4 @@
-package eu.stolin.wd2.actor
+package eu.stolin.wd2.messages
 
 import akka.actor.ActorRef
 

@@ -1,4 +1,7 @@
-package eu.stolin.wd2
+package eu.stolin.wd2.parser
+
+import eu.stolin.wd2.parser.Command
+import eu.stolin.wd2.parser.CommandType
 
 object CommandParser {
 
@@ -20,8 +23,6 @@ object CommandParser {
             } else {
                 return Command(CommandType.UNKNOWN, "")
             }
-        } else if (line.toUpperCase() == "DONE") {
-            return Command(CommandType.DONE, "")
         } else {
             return Command(CommandType.UNKNOWN, "")
         }

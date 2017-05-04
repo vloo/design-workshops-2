@@ -1,5 +1,8 @@
 package eu.stolin.wd2
 
+import eu.stolin.wd2.parser.Gender
+import eu.stolin.wd2.parser.Person
+import eu.stolin.wd2.parser.PersonParser
 import org.hamcrest.collection.IsCollectionWithSize.hasSize
 import org.hamcrest.core.Is
 import org.junit.Assert.assertThat

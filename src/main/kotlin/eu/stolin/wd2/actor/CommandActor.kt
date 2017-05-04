@@ -4,9 +4,13 @@ import akka.actor.ActorRef
 import akka.actor.ActorSystem
 import akka.actor.Props
 import akka.actor.UntypedActor
-import eu.stolin.wd2.CommandParser
-import eu.stolin.wd2.CommandType
-import eu.stolin.wd2.Person
+import eu.stolin.wd2.parser.CommandParser
+import eu.stolin.wd2.parser.CommandType
+import eu.stolin.wd2.parser.Person
+import eu.stolin.wd2.messages.Birthday
+import eu.stolin.wd2.messages.Line
+import eu.stolin.wd2.messages.Register
+import eu.stolin.wd2.messages.Wedding
 
 
 class CommandActor : UntypedActor {

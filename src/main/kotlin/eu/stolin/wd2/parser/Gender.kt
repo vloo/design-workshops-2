@@ -1,4 +1,4 @@
-package eu.stolin.wd2
+package eu.stolin.wd2.parser
 
 enum class Gender(val value: String) {
     MALE("M"),

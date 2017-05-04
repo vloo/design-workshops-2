@@ -1,8 +1,10 @@
 package eu.stolin.wd2.actor
 
 import akka.actor.UntypedActor
-import eu.stolin.wd2.Gender
-import eu.stolin.wd2.Person
+import eu.stolin.wd2.parser.Gender
+import eu.stolin.wd2.parser.Person
+import eu.stolin.wd2.messages.Birthday
+import eu.stolin.wd2.messages.Wedding
 
 
 class PersonActor(val person: Person) : UntypedActor() {
